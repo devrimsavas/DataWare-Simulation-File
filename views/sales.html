@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body class="bg-dark">
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/sales">Sales</a></li>
+        </ul>
+    </nav>
+
+    <h1>Sales </h1>
+
+    <div class="button-section">
+        <div class="row bg bg-secondary p-4">
+            <!--left side-->
+            <div class="col-4 d-flex align-items-center gap-2">
+                <button class="btn btn-primary" type="button" onClick="getDataWareHouse()">GET WHOLE SALES </button>
+                <button class="btn btn-primary" type="button" onClick="exportToCsv()">EXPORT TO CSV FILE </button>
+                <button class="btn btn-primary" type="button" onclick="exportToFile()">EXPORT TO FILE </button>
+                <hr>
+            </div>
+            <!--center-->
+            <div class="col-4 d-flex align-items-center gap-2">
+                <label for="search-country-input">Country </label>
+                <input class="form-control w-auto" type="text" name="search-country-input" id="search-country-input">
+                <button id="search-by-country" class="btn btn-secondary"> Search By
+                    Country</button>
+
+            </div>
+            <!--right side-->
+            <div class="col-4 d-flex align-items-center gap-4">
+                <button class="btn btn-primary" id="show-country-stats" onclick="getGeoData()">SHOW CUSTOMER
+                    GEO</button>
+                <button id="show-graph" class="btn btn-warning" onclick="showGraphic()">SHOW GRAPHIC</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="table-responsive">
+        <!--table created dynamically -->
+    </div>
+
+    <dialog id="geodata-div" class="bg-dark ">
+        <canvas id="dimensions" style="width:90%; height:auto">
+
+        </canvas>
+
+        <button class="btn btn-primary" onclick="closeGraphic()">Close</button>
+
+
+    </dialog>
+
+    <script src="./javascripts/sales.js"></script>
+
+</body>
+
+</html>

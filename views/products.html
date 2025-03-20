@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/sales">Sales</a></li>
+        </ul>
+    </nav>
+    <h1>Products</h1>
+    <div class="button-section">
+        <button class="btn btn-primary" type="button" onclick="getProducts()">Get Products</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>description</th>
+
+                </tr>
+            <tbody id="product-table-body">
+                <!--dynamic data-->
+            </tbody>
+            </thead>
+        </table>
+    </div>
+    <script>
+
+        async function getProducts() {
+
+            const url = "http://localhost:3000/products/getproducts";
+            const tableBody = document.getElementById("product-table-body");
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("Error fetch")
+                }
+                const data = await response.json();
+                console.log(data);
+                tableBody.innerHtml = "";
+                let row = "";
+                data.forEach((product) => {
+
+                    row += `
+
+                    <tr>
+                        <td> ${product.id}</td>
+                        <td> ${product.title}</td>
+                        <td> ${product.price}</td>
+                        <td> ${product.description}</td>
+
+
+                        </tr>
+                    `
+                })
+
+                tableBody.innerHTML = row;
+
+
+
+
+            } catch (error) {
+                console.error("error", error)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

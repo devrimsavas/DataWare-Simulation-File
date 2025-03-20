@@ -1,0 +1,66 @@
+/* Global styles */
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: auto;
+  padding: 20;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+#navbar-group {
+  background-color: #333; /* Dark background */
+  padding: 20px 20px;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+/* Navbar List */
+#navbar {
+  list-style: none;
+  display: flex;
+  justify-content: right; /* Align items to the right */
+  gap: 20px;
+}
+
+/* Navbar List Items */
+#navbar li {
+  display: inline;
+}
+
+/* Navbar Links */
+#navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect */
+#navbar a:hover {
+  background-color: #555;
+  color: #ffcc;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  margin-top: 50px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
