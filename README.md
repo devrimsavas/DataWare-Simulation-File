@@ -103,7 +103,7 @@ Export to CSV → can be used in Excel / Power BI for further analysis.
 
 ### Screenshots
 
-![PipeLine Table Screenshot](docs/datawaresim1.png)
+![PipeLine Table Screenshot](documents/datawaresim1.png)
 
 ### ⚠️ Disclaimer
 
