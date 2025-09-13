@@ -101,6 +101,10 @@ http://localhost:5173
 
 Export to CSV → can be used in Excel / Power BI for further analysis.
 
+### Screenshots
+
+![PipeLine Table Screenshot](docs/datawaresim1.png)
+
 ### ⚠️ Disclaimer
 
 This project is a student assignment / educational demo.
